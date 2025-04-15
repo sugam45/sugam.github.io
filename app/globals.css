@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-accent text-highlight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-secondary text-highlight px-6 py-3 rounded-lg transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply border border-primary text-highlight hover:bg-primary hover:text-highlight px-6 py-3 rounded-lg transition-colors;
+  }
+  
+  .card {
+    @apply bg-accent rounded-lg p-6 hover:transform hover:scale-105 transition-transform shadow-lg border border-primary;
+  }
+  
+  .section-title {
+    @apply text-4xl font-bold text-highlight mb-12 text-center;
+  }
+}
