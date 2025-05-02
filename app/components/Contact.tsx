@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 px-4 bg-gray-900">
+    <section id="contact" className="py-20 px-4 bg-[#00010D]">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-white mb-8">
           Let's Connect
@@ -10,7 +10,7 @@ export default function Contact() {
         </p>
         <div className="flex justify-center gap-6">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/sugam45"
             className="text-white hover:text-blue-400 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
@@ -18,7 +18,7 @@ export default function Contact() {
             GitHub
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/sugam-srivastava-866b59170/"
             className="text-white hover:text-blue-400 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
@@ -26,7 +26,7 @@ export default function Contact() {
             LinkedIn
           </a>
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:srivastavasugam99@gmail.com"
             className="text-white hover:text-blue-400 transition-colors"
           >
             Email

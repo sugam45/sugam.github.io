@@ -5,10 +5,10 @@ import Contact from './components/Contact'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#DCEEF2]">
+    <main className="min-h-screen bg-[#00010D]">
       <Hero />
-      <Projects />
       <Experience />
+      <Projects />
       <Contact />
     </main>
   )

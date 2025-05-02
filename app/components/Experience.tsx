@@ -16,15 +16,15 @@ export default function Experience() {
   ]
 
   return (
-    <section id="experience" className="py-20 px-4 bg-gray-800">
+    <section id="experience" className="py-20 px-4 bg-[#00010D] transition-all duration-300">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-white mb-12 text-center">
+        <h2 className="text-4xl font-bold mb-12 text-center">
           Experience
         </h2>
         <div className="space-y-8">
           {experiences.map((exp, index) => (
             <div key={index} className="bg-gray-900 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-white">
+              <h3 className="text-xl font-semibold text-[#00010D]">
                 {exp.title}
               </h3>
               <p className="text-blue-400">{exp.company}</p>

@@ -1,27 +1,57 @@
+'use client'
+
+import { useState } from 'react'
+import Link from 'next/link'
+
 export default function Projects() {
-  const projects = [
+  const [showAll, setShowAll] = useState(false)
+  
+  const allProjects = [
     {
+      id: 'ml-pipeline',
       title: "Machine Learning Pipeline Optimization",
       description: "Developed an end-to-end ML pipeline that improved model training efficiency by 40%",
       tags: ["Python", "scikit-learn", "MLflow", "Docker"],
-      link: "#",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
+      id: 'time-series',
       title: "Time Series Forecasting System",
       description: "Built a forecasting system for retail sales prediction with 95% accuracy",
       tags: ["Python", "Prophet", "TensorFlow", "AWS"],
-      link: "#",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
+      id: 'nlp-sentiment',
       title: "NLP Sentiment Analysis",
       description: "Created a real-time sentiment analysis tool for customer feedback",
       tags: ["BERT", "PyTorch", "FastAPI", "React"],
-      link: "#",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      id: 'cv-detection',
+      title: "Computer Vision Object Detection",
+      description: "Implemented a real-time object detection system for security applications",
+      tags: ["OpenCV", "YOLOv5", "Python", "TensorRT"],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      id: 'data-viz',
+      title: "Data Visualization Dashboard",
+      description: "Built an interactive dashboard for real-time data analytics",
+      tags: ["React", "D3.js", "Node.js", "MongoDB"],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      id: 'recommendation',
+      title: "Recommendation Engine",
+      description: "Developed a personalized recommendation system for e-commerce",
+      tags: ["Python", "Surprise", "Flask", "Redis"],
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     }
   ]
+
+  const displayedProjects = showAll ? allProjects : allProjects.slice(0, 3)
 
   return (
     <section id="projects" className="py-20 px-4">
@@ -30,7 +60,7 @@ export default function Projects() {
           Featured Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <div
               key={index}
               className="card group"
@@ -58,15 +88,25 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              <a
-                href={project.link}
+              <Link
+                href={`/projects/${project.id}`}
                 className="text-highlight hover:text-secondary"
               >
                 Learn more →
-              </a>
+              </Link>
             </div>
           ))}
         </div>
+        {!showAll && allProjects.length > 3 && (
+          <div className="text-center mt-12">
+            <button
+              onClick={() => setShowAll(true)}
+              className="btn-primary"
+            >
+              Load More Projects
+            </button>
+          </div>
+        )}
       </div>
     </section>
   )
